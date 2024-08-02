@@ -4,9 +4,9 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/sportsDB
+    url: jdbc:mysql://localhost:3306/sports-DB
     username: root
-    password: 1010
+    password: '1010'
   application:
     name: SportCommerce
   jpa:
