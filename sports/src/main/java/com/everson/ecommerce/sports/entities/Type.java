@@ -18,7 +18,7 @@ public class Type {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id")
-    private Long id;
+    private Integer id;
     @Column(name = "name")
     private String name;
     @OneToMany(mappedBy = "type", fetch = FetchType.LAZY)

@@ -18,7 +18,7 @@ public class Brand {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id")
-    private Long id;
+    private Integer id;
     @Column(name = "Name")
     private String name;
     @OneToMany(mappedBy = "brand", fetch = FetchType.LAZY)
