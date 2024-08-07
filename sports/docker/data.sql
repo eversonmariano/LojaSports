@@ -1,9 +1,9 @@
 -- -----------------------------------------------------
--- Schema full-stack-sports-DB
+-- Schema full-stack-sports-center
 -- -----------------------------------------------------
-CREATE DATABASE IF NOT EXISTS `sports-DB`;
+CREATE DATABASE IF NOT EXISTS `sports-center`;
 
-USE `sports-DB` ;
+USE `sports-center` ;
 
 -- Drop existing tables if they exist
 DROP TABLE IF EXISTS Brand;
@@ -13,7 +13,7 @@ DROP TABLE IF EXISTS Product;
 -- Create the Brand table
 CREATE TABLE `Brand` (
                          `Id` INT AUTO_INCREMENT PRIMARY KEY,
-                         `Name` VARCHAR(255) NOT NULL
+                         `Name` VARCHAR(500) NOT NULL
 );
 
 -- Insert data into the Brand table
@@ -29,7 +29,7 @@ INSERT INTO Brand (Name) VALUES
 -- Create the Type table
 CREATE TABLE `Type` (
                         `Id` INT AUTO_INCREMENT PRIMARY KEY,
-                        `Name` VARCHAR(255) NOT NULL
+                        `Name` VARCHAR(500) NOT NULL
 );
 
 -- Insert data into the Type table
@@ -42,10 +42,10 @@ INSERT INTO Type (Name) VALUES
 -- Create the Product table
 CREATE TABLE `Product` (
                            `Id` INT AUTO_INCREMENT PRIMARY KEY,
-                           `Name` VARCHAR(255) NOT NULL,
+                           `Name` VARCHAR(500) NOT NULL,
                            `Description` TEXT,
                            `Price` DECIMAL(10, 2) NOT NULL,
-                           `PictureUrl` VARCHAR(255),
+                           `PictureUrl` VARCHAR(500),
                            `ProductTypeId` INT NOT NULL,
                            `ProductBrandId` INT NOT NULL,
                            FOREIGN KEY (`ProductTypeId`) REFERENCES `Type`(`Id`),

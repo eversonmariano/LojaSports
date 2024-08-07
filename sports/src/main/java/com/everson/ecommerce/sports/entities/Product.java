@@ -20,7 +20,7 @@ public class Product {
     private Integer id;
     @Column(name = "Name")
     private String name;
-    @Column(name = "Description")
+    @Column(name = "Description", length = 500)
     private String description;
     @Column(name = "Price")
     private Long price;
