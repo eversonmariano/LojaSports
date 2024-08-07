@@ -37,17 +37,21 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Page<ProductResponse> getProducts(Pageable pageable, Integer brandId, Integer typeId, String keyword) {
         log.info("Fetchinf Products!");
+        //Fetching from DB
         Specification<Product> spec = Specification.where(null);
         if(brandId != null){
-            spec = spec.and(((root, query, criteriaBuilder) -> criteriaBuilder.equal(root.get("brand").get("id"), brandId));
+            spec = spec.and((root, query, criteriaBuilder) -> criteriaBuilder.equal(root.get("brand").get("id"), brandId));
         }
-        //Fetching from DB
-        Page<Product> productPage = productRepository.findAll(pageable);
-        //Map
-        Page<ProductResponse> productResponses = productPage
-                .map(this::convertToProductResponse);
+        if(typeId != null){
+            spec = spec.and((root, query, criteriaBuilder) -> criteriaBuilder.equal(root.get("type").get("id"), typeId));
+        }
+        if(keyword != null && !keyword.isEmpty()){
+            spec.and(((root, query, criteriaBuilder) -> criteriaBuilder.like(root.get("name"), "%" + keyword + "%")));
+        }
         log.info("Fetched All Products!");
-        return productResponses;
+        //Map
+        return productRepository.findAll(spec, pageable).map(this::convertToProductResponse);
+                
     }
 
     private ProductResponse convertToProductResponse(Product product) {
