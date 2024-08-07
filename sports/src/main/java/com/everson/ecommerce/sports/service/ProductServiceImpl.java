@@ -3,9 +3,11 @@ package com.everson.ecommerce.sports.service;
 import com.everson.ecommerce.sports.entities.Product;
 import com.everson.ecommerce.sports.model.ProductResponse;
 import com.everson.ecommerce.sports.repository.ProductRepository;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -33,9 +35,12 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Page<ProductResponse> getProducts(Pageable pageable) {
+    public Page<ProductResponse> getProducts(Pageable pageable, Integer brandId, Integer typeId, String keyword) {
         log.info("Fetchinf Products!");
-        
+        Specification<Product> spec = Specification.where(null);
+        if(brandId != null){
+            spec = spec.and(((root, query, criteriaBuilder) -> criteriaBuilder.equal(root.get("brand").get("id"), brandId));
+        }
         //Fetching from DB
         Page<Product> productPage = productRepository.findAll(pageable);
         //Map
