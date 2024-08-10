@@ -23,9 +23,9 @@ export default function ProductCard({ product }: Props) {
     }
     return (
         <Card>
-            
+
             <CardHeader avatar={
-                <Avatar sx={{ bgcolor: 'secondary.main' }}>
+                <Avatar sx={{ bgcolor: 'primary.main' }}>
                     {product.name.charAt(0).toUpperCase()}
                 </Avatar>
             }
@@ -33,15 +33,16 @@ export default function ProductCard({ product }: Props) {
                 titleTypographyProps={{ sx: { fontWeight: 'bold', color: 'primary.main' } }}
             />
             <CardMedia
-                sx={{ height: 140, backgroundSize: 'contain' } }
+                sx={{ height: 140, backgroundSize: 'contain' }}
                 image={"/images/products/" + extractImageName(product)}
                 title={product.name}
+                
             />
             <CardContent>
-                <Typography gutterBottom color='secondary' variant="h5">
+                <Typography gutterBottom sx={{ color: 'primary.main' }} variant="h5">
                     {formatPrice(product.price)}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="text.primary">
                     {product.productBrand} / {product.productType}
                 </Typography>
             </CardContent>
