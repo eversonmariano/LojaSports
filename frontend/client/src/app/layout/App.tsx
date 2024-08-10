@@ -1,12 +1,15 @@
+import { CssBaseline, Box } from "@mui/material";
 import Catalog from "../../features/catalog/Catalog";
+import Header from "./Header";
 
 function App() {
 
   return (
-    <div>
-      <h1>SportWay</h1>
+    <Box display="flex" flexDirection="column" height="100vh" width="100%">
+      <CssBaseline />
+      <Header />
       <Catalog />
-    </div>
+    </Box>
   )
 }
 
