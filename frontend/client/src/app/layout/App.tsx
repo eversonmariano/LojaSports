@@ -10,16 +10,17 @@ function App() {
     palette: {
       mode: paletteType,
       primary: {
-        main: '#FF0000',
-        light: '#000',
-        
-        contrastText: '#fff',
+        main: '#3a0040',
+        light: '#E9DB5D',
+        dark: '#A29415',
+
+        contrastText: '#E9DB5D',
       },
       secondary: {
-        main: '#4a148c',
-        light: '#4a148c',
-        dark: '#4a148c',
-        contrastText: '#4a148c',
+        main: '#f30a0a',
+        light: '#f30a0a',
+        dark: '#f30a0a',
+        contrastText: 'f30a0a',
       },
       background: {
         default: darkMode ? '#000' : '#fff',

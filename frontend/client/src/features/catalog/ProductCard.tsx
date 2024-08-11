@@ -25,24 +25,25 @@ export default function ProductCard({ product }: Props) {
         <Card>
 
             <CardHeader avatar={
-                <Avatar sx={{ bgcolor: 'primary.main' }}>
+                <Avatar sx={{ bgcolor: 'primary.dark' }}>
                     {product.name.charAt(0).toUpperCase()}
                 </Avatar>
             }
-                title={product.name}
-                titleTypographyProps={{ sx: { fontWeight: 'bold', color: 'primary.main' } }}
+            title={product.name}
+                titleTypographyProps={{ sx: { fontWeight: 'bold', color: 'primary.dark' } }}
             />
+            
             <CardMedia
                 sx={{ height: 140, backgroundSize: 'contain' }}
                 image={"/images/products/" + extractImageName(product)}
                 title={product.name}
-                
+
             />
             <CardContent>
-                <Typography gutterBottom sx={{ color: 'primary.main' }} variant="h5">
+                <Typography gutterBottom sx={{ color: 'secondary.light' }} variant="h5">
                     {formatPrice(product.price)}
                 </Typography>
-                <Typography variant="body2" color="text.primary">
+                <Typography variant="body2" color="secondary.light">
                     {product.productBrand} / {product.productType}
                 </Typography>
             </CardContent>
@@ -50,6 +51,6 @@ export default function ProductCard({ product }: Props) {
                 <Button size="small">Adicionar ao Carrinho</Button>
                 <Button size="small">Conferir</Button>
             </CardActions>
-        </Card>
+        </Card >
     )
 }
