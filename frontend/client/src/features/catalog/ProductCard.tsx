@@ -1,5 +1,6 @@
 import { Avatar, Button, Card, CardActions, CardContent, CardHeader, CardMedia, Typography } from "@mui/material";
 import { Product } from "../../app/models/products";
+import { Link } from "react-router-dom";
 
 interface Props {
     product: Product;
@@ -40,16 +41,16 @@ export default function ProductCard({ product }: Props) {
 
             />
             <CardContent>
-                <Typography gutterBottom sx={{ color: 'secondary.light' }} variant="h5">
+                <Typography gutterBottom variant="h5">
                     {formatPrice(product.price)}
                 </Typography>
-                <Typography variant="body2" color="secondary.light">
+                <Typography variant="body2" >
                     {product.productBrand} / {product.productType}
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small">Adicionar ao Carrinho</Button>
-                <Button size="small">Conferir</Button>
+                <Button size="small"  sx={{ bgcolor: '#ffffc7' }}>Adicionar ao Carrinho</Button>
+                <Button component={Link} to={`/produto/${product.id}`} size="small" sx={{ bgcolor: '#ffffc7' }}>Descrição</Button>
             </CardActions>
         </Card >
     )
