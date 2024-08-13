@@ -1,5 +1,28 @@
+
 import { AppBar, Switch, Toolbar, Typography } from "@mui/material";
 
+const navLinks = [
+    {title: 'Home', path: '/'},
+    {title: 'Produtos', path: '/store'},
+    {title: 'Contato', path: '/contact'}
+]
+
+const accountLinksLinks = [
+    {title: 'Login', path: '/login'},
+    {title: 'Registro', path: '/register'}
+]
+
+const navStyles = {
+    color: "inherit",
+    Typography:"h6",
+    textDecoration:"none",
+    "&:hover": {
+        color:"seconday.main"
+        },
+    "&:active":{
+        color:"text.secondary"
+    }
+};
 interface Props {
     darkMode: boolean;
     handlerThemeChange: () => void;
