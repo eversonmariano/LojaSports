@@ -34,10 +34,10 @@ CREATE TABLE `Type` (
 
 -- Insert data into the Type table
 INSERT INTO Type (Name) VALUES
-                            ('Shoes'),
-                            ('Rackets'),
-                            ('Football'),
-                            ('Kit Bags');
+                            ('Tênis'),
+                            ('Raquete'),
+                            ('Futebol'),
+                            ('Bolsa');
 
 -- Create the Product table
 CREATE TABLE `Product` (

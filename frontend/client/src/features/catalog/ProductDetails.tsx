@@ -1,10 +1,10 @@
 import { Divider, Grid, Table, TableBody, TableCell, TableContainer, TableRow, Typography } from "@mui/material";
-import axios from "axios";
+
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Product } from "../../app/models/products";
-
-
+import agent from "../../app/api/agent";
+import Spinner from "../../app/Spinner";
 
 
 export default function ProductDetails() {
@@ -28,12 +28,16 @@ export default function ProductDetails() {
         }).format(price);
     }
     useEffect(() => {
-        axios.get(`http://localhost:8081/api/products/${id}`)
-            .then(response => setProduct(response.data))
-            .catch(error => console.error(error))
-            .finally(() => setLoading(false));
-    }, [id])
-    if (loading) return <h3>Aguardando o Produto...</h3>
+        if (id && !isNaN(parseInt(id))) {
+            agent.Store.details(parseInt(id))
+                .then(response => setProduct(response))
+                .catch(error => console.error(error))
+                .finally(() => setLoading(false));
+        } else {
+            console.error('ID inválido');
+        }
+    }, [id]);
+    if (loading) return <Spinner message='Aguardando o Produto...' />
     if (!product) return <h3>Não existe o produto em nosso estoque.</h3>
     return (
         <Grid container spacing={6}>

@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 
-axios.defaults.baseURL = 'https://localhost:8081/api/';
+axios.defaults.baseURL = 'http://localhost:8081/api/';
 
 const responseBody = (response: AxiosResponse) => response.data;
 
@@ -13,11 +13,11 @@ const requests = {
 
 const Store = {
     list:()=> requests.get('products'),
-    get:(id: number) => requests.get(`products/${id}`)
+    details:(id: number) => requests.get(`products/${id}`)
 }
 
 const agent = {
-    ...Store,
+    Store
 }
 
 export default agent;
