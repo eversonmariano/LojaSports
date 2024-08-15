@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { Product } from "../../app/models/products";
 import agent from "../../app/api/agent";
 import Spinner from "../../app/Spinner";
+import NotFound from "../../app/errors/NotFoundError";
 
 
 export default function ProductDetails() {
@@ -38,7 +39,7 @@ export default function ProductDetails() {
         }
     }, [id]);
     if (loading) return <Spinner message='Aguardando o Produto...' />
-    if (!product) return <h3>Não existe o produto em nosso estoque.</h3>
+    if (!product) return <NotFound/>
     return (
         <Grid container spacing={6}>
             <Grid item xs={6}>
