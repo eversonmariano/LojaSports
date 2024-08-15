@@ -15,8 +15,8 @@ export const router = createBrowserRouter([
         element: <App />,
         children: [
             { path: '', element: <HomePage /> },
-            { path: 'produtos', element: <Catalog /> },
-            { path: 'produto/:id', element: <ProductDetails /> },
+            { path: 'store', element: <Catalog /> },
+            { path: 'store/:id', element: <ProductDetails /> },
             { path: 'contato', element: <ContactPage /> },
             { path: 'not-found', element: <NotFound /> },
             { path: 'server-error', element: <ServerError /> },

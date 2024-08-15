@@ -12,11 +12,11 @@ axios.interceptors.response.use(async response=>{
     const {status} = error.response as AxiosResponse;
     switch(status){
         case 404:
-            toast.error('Resource not found - 404 error');
+            toast.error("Resource not found");
             router.navigate('/not-found');
             break;
         case 500:
-            toast.error('Internal server error - 500 error');
+            toast.error("Internal server error occurred");
             router.navigate('/server-error');
             break;
         default:

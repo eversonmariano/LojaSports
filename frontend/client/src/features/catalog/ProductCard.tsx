@@ -50,7 +50,7 @@ export default function ProductCard({ product }: Props) {
             </CardContent>
             <CardActions>
                 <Button size="small"  sx={{ bgcolor: '#ffffc7' }}>Adicionar ao Carrinho</Button>
-                <Button component={Link} to={`/produto/${product.id}`} size="small" sx={{ bgcolor: '#ffffc7' }}>Descrição</Button>
+                <Button component={Link} to={`/store/${product.id}`} size="small" sx={{ bgcolor: '#ffffc7' }}>Descrição</Button>
             </CardActions>
         </Card >
     )
