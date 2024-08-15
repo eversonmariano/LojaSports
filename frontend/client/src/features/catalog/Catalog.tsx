@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Product } from "../../app/models/products";
 import ProductList from "./ProductList";
 import agent from "../../app/api/agent";
-import Spinner from "../../app/Spinner";
+import Spinner from "../../app/layout/Spinner";
 
 export default function Catalog() {
     const [products, setProducts] = useState<Product[]>([]);

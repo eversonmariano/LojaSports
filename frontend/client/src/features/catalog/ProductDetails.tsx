@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Product } from "../../app/models/products";
 import agent from "../../app/api/agent";
-import Spinner from "../../app/Spinner";
+import Spinner from "../../app/layout/Spinner";
 import NotFound from "../../app/errors/NotFoundError";
 
 
