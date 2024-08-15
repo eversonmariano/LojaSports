@@ -1,6 +1,7 @@
 package com.everson.ecommerce.sports.service;
 
 import com.everson.ecommerce.sports.entities.Product;
+import com.everson.ecommerce.sports.exceptions.ProductNotFoundException;
 import com.everson.ecommerce.sports.model.ProductResponse;
 import com.everson.ecommerce.sports.repository.ProductRepository;
 
@@ -24,7 +25,7 @@ public class ProductServiceImpl implements ProductService {
     public ProductResponse getProductById(Integer productId) {
         log.info("Fetching Product by id: {}", productId);
         Product product = productRepository.findById(productId)
-                .orElseThrow(() -> new RuntimeException("Product doesn't exist"));
+                .orElseThrow(() -> new ProductNotFoundException("Product doesn't exist"));
         // Convert the Product to Product Response
         ProductResponse productResponse = convertToProductResponse(product);
         log.info("Fetched Product by Product Id: {}", productId);
