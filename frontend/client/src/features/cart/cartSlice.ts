@@ -1,9 +1,9 @@
 import { createSlice, } from "@reduxjs/toolkit";
-import { Cart } from "../../app/models/cart";
+import { Cartt } from "../../app/models/cart";
 
 
 interface CartState {
-    cart: Cart | null
+    cart: Cartt | null
 }
 
 const initialState: CartState = {

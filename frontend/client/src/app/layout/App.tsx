@@ -32,7 +32,7 @@ function App() {
     },
   });
 
-  const handlerThemeChange = () => {
+  const handleThemeChange = () => {
     setDarkMode(!darkMode);
   };
 
@@ -48,7 +48,7 @@ function App() {
         minWidth="100vw"
         bgcolor={theme.palette.background.default}
       >
-        <Header darkMode={darkMode} handlerThemeChange={handlerThemeChange} />
+        <Header darkMode={darkMode} handleThemeChange={handleThemeChange} />
         <Outlet />
       </Box>
     </ThemeProvider>
