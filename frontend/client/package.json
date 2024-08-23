@@ -16,6 +16,7 @@
     "@fontsource/roboto": "^5.0.14",
     "@mui/icons-material": "^5.16.7",
     "@mui/material": "^5.16.7",
+    "@reduxjs/toolkit": "^2.2.7",
     "axios": "^1.7.4",
     "client": "file:",
     "react": "^18.3.1",
