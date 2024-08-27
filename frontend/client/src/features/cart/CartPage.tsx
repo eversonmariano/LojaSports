@@ -45,12 +45,12 @@ export default function CartPage(){
             <Table>
                 <TableHead>
                     <TableRow>
-                        <TableCell>Product Image</TableCell>
-                        <TableCell>Product</TableCell>
-                        <TableCell>Price</TableCell>
-                        <TableCell>Quantity</TableCell>
+                        <TableCell>Imagem do Produto</TableCell>
+                        <TableCell>Produto</TableCell>
+                        <TableCell>Preço</TableCell>
+                        <TableCell>Quantidade</TableCell>
                         <TableCell>Subtotal</TableCell>
-                        <TableCell>Remove</TableCell>
+                        <TableCell>Remover</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>

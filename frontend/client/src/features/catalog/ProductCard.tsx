@@ -1,6 +1,10 @@
-import { Avatar, Button, Card, CardActions, CardContent, CardHeader, CardMedia, Typography } from "@mui/material";
+import { Avatar, Button, Card, CardActions, CardContent, CardHeader, CardMedia, CircularProgress, Typography } from "@mui/material";
 import { Product } from "../../app/models/products";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useAppDispatch } from "../../app/store/configureStores";
+import agent from "../../app/api/agent";
+import { LoadingButton } from "@mui/lab";
 
 interface Props {
     product: Product;
@@ -22,6 +26,18 @@ export default function ProductCard({ product }: Props) {
             minimumFractionDigits: 2
         }).format(price);
     }
+    const [loading, setLoading] = useState(false);
+    const dispatch = useAppDispatch();
+    function addItem() {
+        setLoading(true);
+        agent.Cart.addItem(product, dispatch)
+            .then(response => {
+                console.log('New Cart:', response.cart)
+            })
+            .catch(error => console.log(error))
+            .finally(() => setLoading(false));
+
+    }
     return (
         <Card>
 
@@ -30,10 +46,10 @@ export default function ProductCard({ product }: Props) {
                     {product.name.charAt(0).toUpperCase()}
                 </Avatar>
             }
-            title={product.name}
+                title={product.name}
                 titleTypographyProps={{ sx: { fontWeight: 'bold', color: 'primary.dark' } }}
             />
-            
+
             <CardMedia
                 sx={{ height: 140, backgroundSize: 'contain' }}
                 image={"/images/products/" + extractImageName(product)}
@@ -49,7 +65,15 @@ export default function ProductCard({ product }: Props) {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small"  sx={{ bgcolor: '#ffffc7' }}>Adicionar ao Carrinho</Button>
+                <LoadingButton
+                    loading={loading}
+                    onClick={addItem}
+                    size="small"
+                    sx={{ bgcolor: '#ffffc7' }}
+                    startIcon={loading ? <CircularProgress /> : null}
+                >
+                    Adicionar ao Carrinho
+                </LoadingButton>
                 <Button component={Link} to={`/store/${product.id}`} size="small" sx={{ bgcolor: '#ffffc7' }}>Descrição</Button>
             </CardActions>
         </Card >

@@ -1,7 +1,6 @@
 package com.everson.ecommerce.sports.service;
-
+import com.everson.ecommerce.sports.entities.Cart;
 import com.everson.ecommerce.sports.entities.CartItem;
-import com.everson.ecommerce.sports.entities.ShoppingCart;
 import com.everson.ecommerce.sports.model.CartItemResponse;
 import com.everson.ecommerce.sports.model.CartResponse;
 import com.everson.ecommerce.sports.repository.CartRepository;
@@ -19,29 +18,30 @@ public class CartServiceImpl implements CartService{
     private final CartRepository cartRepository;
 
     public CartServiceImpl(CartRepository cartRepository) {
+
         this.cartRepository = cartRepository;
     }
 
     @Override
     public List<CartResponse> getAllCarts() {
-        log.info("Fetching All ShoppingCart");
-        List<ShoppingCart> cartList = (List<ShoppingCart>) cartRepository.findAll();
+        log.info("Fetching All Cart");
+        List<Cart> cartList = (List<Cart>) cartRepository.findAll();
         //Now we will uise stream operator to map with response
-        List<CartResponse> cartResponses = cartList.stream()
+        log.info("Fetched All Cart");
+        return cartList.stream()
                 .map(this::converttoCartResponse)
                 .collect(Collectors.toList());
-        return cartResponses;
     }
 
 
     @Override
     public CartResponse getCartById(String cartId) {
         log.info("Fetching Cart by Id: {}", cartId);
-        Optional<ShoppingCart> cartOptional = cartRepository.findById(cartId);
+        Optional<Cart> cartOptional = cartRepository.findById(cartId);
         if(cartOptional.isPresent()){
-            ShoppingCart shoppingCart = cartOptional.get();
-            log.info("Fetched Cart br Id: {}", cartId);
-            return converttoCartResponse(shoppingCart);
+            Cart cart = cartOptional.get();
+            log.info("Fetched Cart by Id: {}", cartId);
+            return converttoCartResponse(cart);
         } else {
             log.info("Cart with Id: {} not found", cartId);
             return null;
@@ -58,27 +58,27 @@ public class CartServiceImpl implements CartService{
     }
 
     @Override
-    public CartResponse createCart(ShoppingCart shoppingCart) {
-        log.info("Deleting Cart!");
-        ShoppingCart savedCart = cartRepository.save(shoppingCart);
+    public CartResponse createCart(Cart cart) {
+        log.info("Creating Cart!");
+        Cart savedCart = cartRepository.save(cart);
         log.info("Cart created with Id: {}", savedCart.getId());
         return converttoCartResponse(savedCart);
     }
 
-    private CartResponse converttoCartResponse(ShoppingCart shoppingCart) {
-        if(shoppingCart == null){
+    private CartResponse converttoCartResponse(Cart cart) {
+        if(cart == null){
             return null;
         }
-        List<CartItemResponse> itemResponses = shoppingCart.getItems().stream()
-                .map(this::convertTocartItemResponses)
+        List<CartItemResponse> itemResponses = cart.getItems().stream()
+                .map(this::convertToCartItemResponses)
                 .collect(Collectors.toList());
         return CartResponse.builder()
-                .id(shoppingCart.getId())
+                .id(cart.getId())
                 .items(itemResponses)
                 .build();
     }
 
-    private CartItemResponse convertTocartItemResponses(CartItem cartItem) {
+    private CartItemResponse convertToCartItemResponses(CartItem cartItem) {
         return CartItemResponse.builder()
                 .id(cartItem.getId())
                 .name(cartItem.getName())

@@ -34,18 +34,18 @@ class CartService {
 
     async addItemToCart(item: Product, quantity = 1, dispatch: Dispatch){
         try{    
-            let basket = this.getCurrentCart();
-            if(!basket){
-                basket = await this.createCart();
+            let cart = this.getCurrentCart();
+            if(!cart){
+                cart = await this.createCart();
             }
             const itemToAdd = this.mapProductToCart(item);
-            basket.items = this.upsertItems(basket.items, itemToAdd, quantity);
-            this.setCart(basket, dispatch);
+            cart.items = this.upsertItems(cart.items, itemToAdd, quantity);
+            this.setCart(cart, dispatch);
             //calculate totals 
-            const totals = this.calculateTotals(basket);
-            return {basket, totals};
+            const totals = this.calculateTotals(cart);
+            return {cart, totals};
         }catch(error){
-            throw new Error("Failed to add and intem to Basket.")
+            throw new Error("Failed to add and item to Basket.")
         }
     }
 

@@ -12,13 +12,14 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@RedisHash("ShoppingCart")
-public class ShoppingCart {
+@RedisHash("Cart")
+public class Cart {
     @Id
     private String id;
     private List<CartItem> items = new ArrayList<>();
 
-    public ShoppingCart(String id){
+    public Cart(String id){
+
         this.id = id;
     }
 }
