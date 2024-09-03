@@ -38,6 +38,7 @@ export default function ProductCard({ product }: Props) {
             .finally(() => setLoading(false));
 
     }
+   
     return (
         <Card>
 
