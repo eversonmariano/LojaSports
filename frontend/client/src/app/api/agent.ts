@@ -43,15 +43,24 @@ const requests = {
 }
 
 const Store = {
-    list: () => requests.get('products'),
+    apiUrl: 'http://localhost:8081/api/products',
+    list: (brandId?: number, typeId?:number, url?: string) =>{
+        let requestUrl = url || '';
+        if (brandId!==undefined){
+            requestUrl += `&brandId=${brandId}`;
+        }
+        if (typeId!==undefined){
+            requestUrl += `&typeId=${typeId}`;
+        }
+        return requests.get(requestUrl);
+
+    } ,
     details: (id: number) => requests.get(`products/${id}`),
     types: () => requests.get('products/types').then(types => [{ id: 0, name: 'All ' }, ...types]),
     brands: () => requests.get('products/brands').then(brands => [{ id: 0,  name: 'All ' }, ...brands]),
     search: (keywords: string)  => requests.get(`products/products?keywords=${keywords}`)
-
-
-
 }
+
 
 const Cart = {
     get: async () => {
