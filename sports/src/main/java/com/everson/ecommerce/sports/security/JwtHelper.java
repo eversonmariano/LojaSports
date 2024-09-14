@@ -32,6 +32,16 @@ public class JwtHelper {
         return generateToken(claims, userDetails.getUsername());
     }
 
+    public Boolean validateToken(String token, UserDetails userDetails) {
+        String username = getUsernameFromToken(token);
+        return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
+    }
+
+    private boolean isTokenExpired(String token) {
+        final Date expiration = getExpirationDateFromToken(token);
+        return expiration.before(new Date());
+    }
+
     private String generateToken(Map<String, Object> claims, String subject) {
         //Convert the secret string key int a key object
         Key hmacKey = new SecretKeySpec(secret.getBytes(StandardCharsets.UTF_8), SignatureAlgorithm.HS256.getJcaName());
