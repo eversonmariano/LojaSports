@@ -122,9 +122,14 @@ const Cart = {
     }
 }
 
+const Account = {
+    login: (values:any) => requests.post('auth/login', values)
+}
+
 const agent = {
     Store,
-    Cart
+    Cart,
+    Account
 }
 
 export default agent;
