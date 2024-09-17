@@ -3,6 +3,7 @@ package com.everson.ecommerce.sports.security;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.security.Keys;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
@@ -20,7 +21,7 @@ public class JwtHelper {
 
     public static final long JWT_EXPIRATION_TIME = 5 * 60 * 60;
 
-    private final String secret = "ads5dsa456dsa658798weas3wq1";
+    private final String secret = "f27dacd186810e78c0fd8ba65ecf3f1524ff087c5e86773d5172d424b3fd201f";
 
     public String getUsernameFromToken(String token) {
         return getClaimFromToken(token, Claims::getSubject);
@@ -47,7 +48,7 @@ public class JwtHelper {
 
     private String generateToken(Map<String, Object> claims, String subject) {
         //Convert the secret string key int a key object
-        Key hmacKey = new SecretKeySpec(secret.getBytes(StandardCharsets.UTF_8), SignatureAlgorithm.HS256.getJcaName());
+        Key hmacKey = new SecretKeySpec(secret.getBytes(StandardCharsets.UTF_8), SignatureAlgorithm.HS512.getJcaName());
         return Jwts.builder()
                 .setClaims(claims)
                 .setSubject(subject)
@@ -63,7 +64,7 @@ public class JwtHelper {
     }
 
     private Claims getClaimsFromToken(String token) {
-        Key hmacKey = new SecretKeySpec(secret.getBytes(StandardCharsets.UTF_8), "HmacSHA1");
+        Key hmacKey = new SecretKeySpec(secret.getBytes(StandardCharsets.UTF_8), "HmacSHA512");
         return Jwts.parserBuilder()
                 .setSigningKey(hmacKey)
                 .build()
