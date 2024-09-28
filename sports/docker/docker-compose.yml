@@ -1,6 +1,6 @@
 services:
   sportscenter-mysql:
-    image: mysql
+    image: "mysql"
     restart: always
     container_name: "sports-center-mysql"
     environment:
@@ -10,14 +10,30 @@ services:
     volumes:
       - ./data.sql:/docker-entrypoint-initdb.d/data.sql
       - sports-center-mysql-data:/var/lib/mysql
-
+    networks:
+      - spring-demo
   sportscenter-redis:
     image: "redis:latest"
     container_name: "sports-center-redis-container"
     ports:
       - "6379:6379"
+    networks:
+      - spring-demo
     volumes:
       - sports-center-redis-data:/data
+  si-api:
+    container_name: si-api
+    image: si/si:0.0.1-SNAPSHOT
+    ports:
+      - 8081:8081
+    networks:
+      - spring-demo
+
+
+
+networks:
+  spring-demo:
+    driver: bridge
 
 volumes:
   sports-center-redis-data:
