@@ -29,36 +29,38 @@ export const signInUser = createAsyncThunk<User, FieldValues>(
     }
 )
 
+// Função para buscar o usuário atual do localStorage
 export const fetchCurrentUser = createAsyncThunk<User | null>(
-    'auth/fetchCurrentUser',
-    async(_, thunkAPI) =>{
-        try{
-            //Retrieve user data from local storage
-            const userString = localStorage.getItem('user');
-            if(userString){
-                const user = JSON.parse(userString) as User;
-                return user;
-            }
-            return null;
-        }
-        catch(error){
-            console.error("Erro ao buscar usuário atual:", error);
-            return null;
-        }
-    }
+  'auth/fetchCurrentUser',
+  async(_, thunkAPI) =>{
+      try{
+          //Retrieve user data from local storage
+          const userString = localStorage.getItem('user');
+          if(userString){
+              const user = JSON.parse(userString) as User;
+              return user;
+          }
+          return null;
+      }
+      catch(error){
+          console.error("Erro ao buscar usuário atual:", error);
+          return null;
+      }
+  }
 )
 
+// Função para efetuar logout removendo o usuário do localStorage
 export const logoutUser = createAsyncThunk<void>(
-    'auth/logout',
-    async(_, thunkAPI) =>{
-        try{
-            //Remove user from local storage
-            localStorage.removeItem('user');
-        }
-        catch(error){
-            console.error("Erro ao efetuar logout do usuário");
-        }
-    }
+  'auth/logout',
+  async(_, thunkAPI) =>{
+      try{
+          //Remove user from local storage
+          localStorage.removeItem('user');
+      }
+      catch(error){
+          console.error("Erro ao efetuar logout do usuário");
+      }
+  }
 )
 
 export const accountSlice = createSlice({

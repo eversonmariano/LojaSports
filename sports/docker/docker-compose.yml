@@ -21,14 +21,23 @@ services:
       - spring-demo
     volumes:
       - sports-center-redis-data:/data
-  si-api:
-    container_name: si-api
-    image: si/si:0.0.1-SNAPSHOT
+  backend-api:
+    container_name: backend-api
+    image: backend/backend:0.0.1-SNAPSHOT
     ports:
       - 8081:8081
     networks:
       - spring-demo
 
+  frontend-ui:
+    container_name: frontend-ui
+    image: frontend/frontend:1.0.0
+    ports:
+      - 3000:3000
+    networks:
+      - spring-demo
+    depends_on:
+      - backend-api
 
 
 networks:
