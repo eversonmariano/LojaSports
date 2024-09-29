@@ -1,0 +1,48 @@
+package com.everson.ecommerce.sports.entities.OrderAggregate;
+
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+@Entity
+@Table(name = "Orders")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class Order {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Id")
+    private Integer id;
+    @Column(name = "Cart_id")
+    private String cartId;
+    @Embedded
+    private ShippingAddress shippingAddress;
+    @Column(name = "Order_Data")
+    private LocalDateTime orderDate = LocalDateTime.now();
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "order")
+    private List<OrderItem> orderItems;
+    @Column(name = "Sub_Total")
+    private Double subTotal;
+    @Column(name = "Delivery")
+    private Double deliveryFree;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "Order_Status")
+    private OrderStatus orderStatus = OrderStatus.Pending;
+
+    public Double getTotal() {
+        return getSubTotal() + getDeliveryFree();
+    }
+
+
+
+
+}
