@@ -21,6 +21,7 @@ O backend é construído com tecnologias modernas, como Spring Boot e Spring Sec
 - Spring Security 6
 - Autenticação com JWT Token
 - Spring Data JPA
+- Testes Unitários
 - Documentação com OpenAPI e Swagger UI
 - Docker
 
