@@ -1,6 +1,6 @@
-<<<<<<< HEAD
-# LojaSports
-=======
+
+# LojaSports - SPORT WAY
+
 
 # Loja de Artigos Esportivos 
 
