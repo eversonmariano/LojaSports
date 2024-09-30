@@ -1,5 +1,3 @@
-Aqui está um exemplo de um arquivo README para o frontend da **Sport Way** utilizando React:
-
 ---
 
 # Sports Store - Frontend
