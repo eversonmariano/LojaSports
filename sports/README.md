@@ -2,7 +2,7 @@
 
 ## Visão geral
 
-O backend do projeto da Loja de Artigos Esportivos é responsável por manipular todas as operações do lado do servidor, incluindo autenticação de usuário, endpoints de API. Esta seção fornece uma visão geral da arquitetura de backend, tecnologias usadas e instruções de configuração.
+O backend do projeto da Loja de Artigos Esportivos **Sport Way** é responsável por manipular todas as operações do lado do servidor, incluindo autenticação de usuário, endpoints de API. Esta seção fornece uma visão geral da arquitetura de backend, tecnologias usadas e instruções de configuração.
 
 ## Tecnologias usadas:
 
