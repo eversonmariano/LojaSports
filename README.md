@@ -1,5 +1,5 @@
 
-# LojaSports - SPORT WAY
+# SPORT WAY
 
 
 # Loja de Artigos Esportivos 
