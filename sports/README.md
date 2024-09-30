@@ -62,6 +62,3 @@ Abra seu navegador em: `http://localhost:8081/swagger-ui/index.html#/.
 
 Este projeto é licenciado sob a Apache License 2.0. Veja o arquivo [LICENSE](LICENSE) para detalhes.
 
-## Contributors
-
-- [Ali Bouali](https://github.com/ali-bouali)
