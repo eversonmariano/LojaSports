@@ -21,6 +21,7 @@ O backend é construído com tecnologias modernas, como Spring Boot e Spring Sec
 - Spring Security 6
 - Autenticação com JWT Token
 - Spring Data JPA
+- Testes Unitários
 - Documentação com OpenAPI e Swagger UI
 - Docker
 
@@ -59,10 +60,21 @@ Para começar com o projeto Book Social Network, siga as instruções de configu
 - [Instruções para Backend](/sports/README.md)
 - [Instruções para Frontend](client-ui/README.md)
 
+<p align="center">
+    <img src="./imagens/1.png" width="100%" />
+    <img src="./imagens/2.png" width="100%" />
+    <img src="./imagens/3.png" width="100%" />
+    <img src="./imagens/4.png" width="100%" />
+    <img src="./imagens/5.png" width="100%" />
+    <img src="./imagens/6.png" width="100%" />
+    <img src="./imagens/7.png" width="100%" />
+    <img src="./imagens/8.png" width="100%" />
+    <img src="./imagens/9.png" width="100%" />
+    <img src="./imagens/10.png" width="100%" />
+</>
+    
 <div>
-    <img src="./media/x.png" width="100%" />
     <sub>Made with 💙 by <a href="https://github.com/eversonmariano">Everson Mariano</a></sub>
 </div>
 
 Se precisar de mais alguma coisa, é só me avisar!
->>>>>>> efbdbd1ecf00bfd849d023abb68df7a5244bf0db
