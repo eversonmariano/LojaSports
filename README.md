@@ -60,7 +60,16 @@ Para começar com o projeto Book Social Network, siga as instruções de configu
 - [Instruções para Frontend](client-ui/README.md)
 
 <div>
-    <img src="./media/x.png" width="100%" />
+    <img src="./media/1.png" width="100%" />
+    <img src="./media/2.png" width="100%" />
+    <img src="./media/3.png" width="100%" />
+    <img src="./media/4.png" width="100%" />
+    <img src="./media/5.png" width="100%" />
+    <img src="./media/6.png" width="100%" />
+    <img src="./media/7.png" width="100%" />
+    <img src="./media/8.png" width="100%" />
+    <img src="./media/9.png" width="100%" />
+    <img src="./media/10.png" width="100%" />
     <sub>Made with 💙 by <a href="https://github.com/eversonmariano">Everson Mariano</a></sub>
 </div>
 
