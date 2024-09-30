@@ -55,7 +55,7 @@ Este projeto é licenciado sob a Apache License 2.0. Veja o arquivo [LICENSE](LI
 
 ## Iniciando o Projeto
 
-Para começar com o projeto Book Social Network, siga as instruções de configuração nos diretórios correspondentes:
+Para começar com o projeto Sport Way, siga as instruções de configuração nos diretórios correspondentes:
 
 - [Instruções para Backend](/sports/README.md)
 - [Instruções para Frontend](frontend/README.md)
