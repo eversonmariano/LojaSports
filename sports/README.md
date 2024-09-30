@@ -52,6 +52,12 @@ Para configurar o backend do projeto da loja de , siga estas etapas:
 
 Abra seu navegador em: `http://localhost:8081/swagger-ui/index.html#/.
 
+<p align="center">
+    <img src="./imagens/1.png" width="100%" />
+    <img src="./imagens/2.png" width="100%" />
+    <img src="./imagens/3.png" width="100%" />
+</>
+
 ## Licença
 
 Este projeto é licenciado sob a Apache License 2.0. Veja o arquivo [LICENSE](LICENSE) para detalhes.
