@@ -58,7 +58,7 @@ Este projeto é licenciado sob a Apache License 2.0. Veja o arquivo [LICENSE](LI
 Para começar com o projeto Book Social Network, siga as instruções de configuração nos diretórios correspondentes:
 
 - [Instruções para Backend](/sports/README.md)
-- [Instruções para Frontend](client-ui/README.md)
+- [Instruções para Frontend](frontend/README.md)
 
 <p align="center">
     <img src="./imagens/1.png" width="100%" />
