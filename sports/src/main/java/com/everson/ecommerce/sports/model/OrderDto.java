@@ -16,6 +16,6 @@ public class OrderDto {
     private String cartId;
     private ShippingAddress shippingAddress;
     private Long subTotal;
-    private Long deliveryFree;
+    private Long deliveryFee;
     private LocalDateTime orderDate;
 }

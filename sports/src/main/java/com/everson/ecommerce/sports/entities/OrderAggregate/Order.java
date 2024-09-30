@@ -33,13 +33,13 @@ public class Order {
     @Column(name = "Sub_Total")
     private Double subTotal;
     @Column(name = "Delivery")
-    private Double deliveryFree;
+    private Double deliveryFee;
     @Enumerated(EnumType.STRING)
     @Column(name = "Order_Status")
     private OrderStatus orderStatus = OrderStatus.Pending;
 
     public Double getTotal() {
-        return getSubTotal() + getDeliveryFree();
+        return getSubTotal() + getDeliveryFee();
     }
 
 

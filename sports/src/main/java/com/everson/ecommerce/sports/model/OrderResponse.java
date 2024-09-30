@@ -18,7 +18,7 @@ public class OrderResponse {
     private String cartId;
     private ShippingAddress shippingAddress;
     private Long subTotal;
-    private Long deliveryFree;
+    private Long deliveryFee;
     private Double total;
     private LocalDateTime orderDate;
     private OrderStatus orderStatus;

@@ -26,13 +26,10 @@ public interface OrderMapper {
     OrderResponse OrderToOrderResponse(Order order);
 
     @Mapping(target = "orderDate", expression = "java(orderDto.getOrderDate())")
-    @Mapping(target = "orderStatus", constant = "Pending")
-        // Reference enum constant directly
+    @Mapping(target = "orderStatus", constant = "Pending") // Reference enum constant directly
     Order orderResponseToOrder(OrderDto orderDto);
 
     List<OrderDto> ordersToOrderResponses(List<Order> orders);
 
     void updateOrderFromOrderResponse(OrderDto orderDto, @MappingTarget Order order);
-
-
 }

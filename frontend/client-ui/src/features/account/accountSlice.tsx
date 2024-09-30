@@ -85,7 +85,7 @@ export const accountSlice = createSlice({
         builder.addMatcher(isAnyOf(signInUser.rejected, fetchCurrentUser.rejected, logoutUser.fulfilled), (state, action)=>{
             const payload = action.payload as string | null;
             state.error = payload;
-            toast.success('Falha ao entrar. Tente novamente');
+            toast.success('Falha ao fazer login. Tente novamente');
         });
     })
 })

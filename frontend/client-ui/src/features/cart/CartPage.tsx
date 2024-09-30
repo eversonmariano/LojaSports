@@ -1,9 +1,12 @@
-import { IconButton, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography, Paper} from "@mui/material";
+import { IconButton, Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography, Paper, Box} from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useAppDispatch, useAppSelector } from "../../app/store/configureStores";
 import agent from "../../app/api/agent";
 import { Product } from "../../app/models/products";
 import { Add, Remove } from "@mui/icons-material";
+import CartSummary from "./CartSummary";
+import { Link } from "react-router-dom";
+
 
 export default function CartPage(){
     const {cart} = useAppSelector(state => state.cart);
@@ -41,6 +44,7 @@ export default function CartPage(){
     };
     if(!cart || cart.items.length === 0 ) return <Typography variant="h3">Seu carrinho está vazio. Por favor adicione alguns itens!!!</Typography>
     return (
+        <>
         <TableContainer component={Paper}>
             <Table>
                 <TableHead>
@@ -83,6 +87,20 @@ export default function CartPage(){
                 </TableBody>
             </Table>
         </TableContainer>
+        <Box mt={2} p={2} bgcolor="background.paper" borderRadius={4}>
+            <CartSummary/>
+            <Button
+                component={Link}
+                to='/checkout'
+                variant='contained'
+                size='large'
+                fullWidth
+            >
+                Confirme Sua Compra
+
+            </Button>
+        </Box>
+        </>
     );
     
 }
