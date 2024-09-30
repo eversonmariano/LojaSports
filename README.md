@@ -10,18 +10,6 @@ Além disso, a plataforma oferece ferramentas de recomendação de produtos com 
 
 O backend é construído com tecnologias modernas, como Spring Boot e Spring Security, enquanto o frontend é intuitivo e estilizado com React, proporcionando uma navegação fluida e visual atraente.
 
-## Funcionalidades
-
-- Registro de Usuário: Usuários podem se registrar para criar uma nova conta.
-- Validação de E-mail: Contas são ativadas utilizando códigos de validação de e-mail seguros.
-- Autenticação de Usuário: Usuários existentes podem fazer login com segurança.
-- Gerenciamento de Livros: Usuários podem criar, atualizar, compartilhar e arquivar seus livros.
-- Empréstimo de Livros: Implementa verificações necessárias para determinar se um livro pode ser emprestado.
-- Devolução de Livros: Usuários podem devolver livros emprestados.
-- Aprovação de Devolução: Funcionalidade para aprovar a devolução de livros.
-
-
-
 ## Tecnologias Utilizadas
 
 ### Backend sports)
@@ -68,6 +56,9 @@ Para começar com o projeto Book Social Network, siga as instruções de configu
 - [Instruções para Backend](/sports/README.md)
 - [Instruções para Frontend](client-ui/README.md)
 
-
+<div>
+    <img src="./media/x.png" width="100%" />
+    <sub>Made with 💙 by <a href="https://github.com/eversonmariano">Everson Mariano</a></sub>
+</div>
 
 Se precisar de mais alguma coisa, é só me avisar!
