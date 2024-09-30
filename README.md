@@ -77,4 +77,3 @@ Para começar com o projeto Book Social Network, siga as instruções de configu
 </div>
 
 Se precisar de mais alguma coisa, é só me avisar!
->>>>>>> efbdbd1ecf00bfd849d023abb68df7a5244bf0db
