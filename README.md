@@ -59,17 +59,20 @@ Para começar com o projeto Book Social Network, siga as instruções de configu
 - [Instruções para Backend](/sports/README.md)
 - [Instruções para Frontend](client-ui/README.md)
 
+<p align="center">
+    <img src="./imagens/1.png" width="100%" />
+    <img src="./imagens/2.png" width="100%" />
+    <img src="./imagens/3.png" width="100%" />
+    <img src="./imagens/4.png" width="100%" />
+    <img src="./imagens/5.png" width="100%" />
+    <img src="./imagens/6.png" width="100%" />
+    <img src="./imagens/7.png" width="100%" />
+    <img src="./imagens/8.png" width="100%" />
+    <img src="./imagens/9.png" width="100%" />
+    <img src="./imagens/10.png" width="100%" />
+</>
+    
 <div>
-    <img src="./media/1.png" width="100%" />
-    <img src="./media/2.png" width="100%" />
-    <img src="./media/3.png" width="100%" />
-    <img src="./media/4.png" width="100%" />
-    <img src="./media/5.png" width="100%" />
-    <img src="./media/6.png" width="100%" />
-    <img src="./media/7.png" width="100%" />
-    <img src="./media/8.png" width="100%" />
-    <img src="./media/9.png" width="100%" />
-    <img src="./media/10.png" width="100%" />
     <sub>Made with 💙 by <a href="https://github.com/eversonmariano">Everson Mariano</a></sub>
 </div>
 
